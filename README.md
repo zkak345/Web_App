@@ -18,3 +18,7 @@ python manage.py createsuperuser
 docker-compose up
 ```
 
+
+# License
+
+Zaid Kakish
