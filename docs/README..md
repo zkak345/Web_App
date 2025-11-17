@@ -68,7 +68,6 @@
 ## Component Diagram
 ![Compontent Diagram](https://github.com/zkak345/Web_App/blob/main/docs/Component%20Diagram)
 
-
 ## UI interfaces
 ![UI](https://github.com/zkak345/Web_App/blob/main/docs/UI)
 ![UI2](https://github.com/zkak345/Web_App/blob/main/docs/UI2)
