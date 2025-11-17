@@ -55,3 +55,14 @@
 
 **Mitigations**:
   - Only admins can make role changes
+
+
+
+# Diagrams
+![Context Diagram](https://github.com/zkak345/Web_App/blob/main/docs/Context%20Diagram)
+![Container Diagram](https://github.com/zkak345/Web_App/blob/main/docs/Container%20Diagram)
+![Compontent Diagram](https://github.com/zkak345/Web_App/blob/main/docs/Component%20Diagram)
+
+
+![UI](https://github.com/zkak345/Web_App/blob/main/docs/UI)
+![UI2](https://github.com/zkak345/Web_App/blob/main/docs/UI2)
