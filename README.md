@@ -12,7 +12,7 @@ git clone repo.git
 ```
 Switch into the correct folder
 ```bash
-cd Web_App
+cd Web_App/cargo2go
 ```
 Build the docker image
 ```
