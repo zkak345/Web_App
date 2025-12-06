@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title> Manager Home </title>
+    </head>
+    <body>
+        <h1> Manager Dashboard</h1>
+        <p> Welcome, {{user.username}} ({{groups|join:","}})</p>
+        <ul>
+            <li> View and Manage shipments</li>
+            <li> Assign Drivers</li>
+            <li> Review shipemnt status </li>
+        </ul>
+        <a href="{% url 'logout' %}"> Logout </a>
+    </body>
+</html>
