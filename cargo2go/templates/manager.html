@@ -1,15 +1,60 @@
-<html>
-    <head>
-        <title> Manager Home </title>
-    </head>
-    <body>
-        <h1> Manager Dashboard</h1>
-        <p> Welcome, {{user.username}} ({{groups|join:","}})</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Dashboard | CargoFlow</title>
+    <style>
+        body {
+            margin: 0;
+            background: #f3f4f6;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 1rem;
+            font-size: 1.4rem;
+        }
+        .container {
+            padding: 2rem;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        a.logout {
+            float: right;
+            color: white;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    Manager Dashboard 
+    <a href="{% url 'logout' %}" class="logout">Logout</a>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Welcome, {{ user.username }}</h2>
+        <p>Your role(s): {{ groups|join:", " }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Shipment Operations</h3>
         <ul>
-            <li> View and Manage shipments</li>
-            <li> Assign Drivers</li>
-            <li> Review shipemnt status </li>
+            <li><a href="#">View & Manage Shipments</a></li>
+            <li><a href="#">Assign Drivers</a></li>
+            <li><a href="#">Review Status Updates</a></li>
         </ul>
-        <a href="{% url 'logout' %}"> Logout </a>
-    </body>
+    </div>
+</div>
+
+</body>
 </html>

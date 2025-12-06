@@ -1,17 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title> Login - Cargo2Go </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo2Go | Login</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e90ff, #00b3b3);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px 35px;
+            border-radius: 12px;
+            width: 380px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+            font-size: 26px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+            font-size: 15px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #1e90ff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(30,144,255,0.4);
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: #1e90ff;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #187bcd;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .footer-text {
+            margin-top: 15px;
+            text-align: center;
+            color: #555;
+            font-size: 13px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1> Login </h1>
-    {% if form.errors %}
-        <p style="color:red;"> Invalid username or password </p>
-    {% endif %}
-    <form method = "post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type = "submit"> Log in </button>
-    </form>
+    <div class="login-container">
+        <h2>Cargo2Go Login</h2>
+
+        {% if form.errors %}
+            <p class="error-message">Invalid username or password</p>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="input-group">
+                <label for="id_username">Username</label>
+                {{ form.username }}
+            </div>
+
+            <div class="input-group">
+                <label for="id_password">Password</label>
+                {{ form.password }}
+            </div>
+
+            <button type="submit" class="btn-login">Sign In</button>
+        </form>
+
+        <p class="footer-text">
+            © 2025 Cargo2Go, All Rights Reserved
+        </p>
+    </div>
 </body>
 </html>
