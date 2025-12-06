@@ -1,14 +1,11 @@
 from django.apps import AppConfig
 
 
-class ShipmentsConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'shipments'
-
 class AccountsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'accounts'
 
-
-    def read(self):
+    def ready(self):
+        from django.db.models.signals import post_migrate
         from . import signals
+        post_migrate.connect(signals.create_default_groups, sender=self)
