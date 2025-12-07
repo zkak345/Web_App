@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager – Shipments</title>
+</head>
+<body>
+    <h1>All Shipments</h1>
+
+    <p><a href="{% url 'manager_shipment_create' %}">Create New Shipment</a></p>
+
+    <table border="1" cellpadding="6">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Destination</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for shipment in shipments %}
+        <tr>
+            <td>{{ shipment.id }}</td>
+            <td>{{ shipment.shipment_name }}</td>
+            <td>{{ shipment.status }}</td>
+            <td>{{ shipment.destination }}</td>
+            <td>
+                <a href="{% url 'manager_modify' shipment.id %}">Modify</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No shipments found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

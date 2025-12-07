@@ -18,10 +18,14 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth import views as a_views
 from accounts.views import home
+from shipments import views as shipment_views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path("accounts/login/", a_views.LoginView.as_view(template_name="login.html"), name="login"),
     path("accounts/logout/", a_views.LogoutView.as_view(next_page="login"), name="logout"),
-    path("home/", home, name="home")
+    path("home/", home, name="home"),
+    path("manager/shipments/", shipment_views.manager_shipment_list, name = "manager_shipments"),
+    path("manager/shipments/new/", shipment_views.manager_shipment_create, name="manager_shipment_create"),
+    path("manager/shipments/<int:pk>/edit/", shipment_views.manager_modify_shipment, name="manager_modify")
 ]

@@ -1,0 +1,14 @@
+<html>
+  <head>
+      <title>Create Shipment</title>
+  </head>
+  <body>
+      <h1>Create Shipment</h1>
+      <a href="{% url 'manager_shipments' %}">&larr; Back to list</a>
+      <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Save</button>
+      </form>
+  </body>
+</html>
