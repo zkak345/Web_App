@@ -8,9 +8,9 @@ def home(request):
     if "Admin" in groups or "Manager" in groups:
         template = "manager.html"
     elif "Driver" in groups:
-        template = "accounts/driver_home.html"
+        template = "driver.html"
     else:
-        template = "accounts/customer.html"
+        template = "customerlist.html"
     
     context = {
         "user": request.user,

@@ -4,7 +4,7 @@ from .models import Shipments
 class ShipmentForms(forms.ModelForm):
     class Meta:
         model = Shipments
-        fields = ["shipment_name", "tracking_ID", "destination", "assigned_driver", "status", "customer"]
+        fields = ["shipment_name", "tracking_id", "destination", "assigned_driver", "status", "customer"]
 
     def clean_destination(self):
         dest = self.cleaned_data["destination"]

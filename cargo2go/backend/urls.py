@@ -27,5 +27,7 @@ urlpatterns = [
     path("home/", home, name="home"),
     path("manager/shipments/", shipment_views.manager_shipment_list, name = "manager_shipments"),
     path("manager/shipments/new/", shipment_views.manager_shipment_create, name="manager_shipment_create"),
-    path("manager/shipments/<int:pk>/edit/", shipment_views.manager_modify_shipment, name="manager_modify")
+    path("manager/shipments/<int:pk>/edit/", shipment_views.manager_modify_shipment, name="manager_modify"),
+    path("driver/shipments", shipment_views.driver_shipments, name="driver_shipments"),
+    path("driver/shipments/<str:tracking_id>/delivered", shipment_views.driver_mark_delivered, name="driver_mark_delivered"),
 ]
