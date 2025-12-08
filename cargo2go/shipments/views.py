@@ -49,9 +49,9 @@ def driver_shipments(request):
 def driver_mark_delivered(request, tracking_id):
     shipment = get_object_or_404(Shipments, tracking_id=tracking_id, assigned_driver=request.user)
     if request.method == 'POST':
-        if shipment.status in ["IN_TRANSIT", "OUT_FOR_DELIVERY"]:
-            shipment.status = "DELIVERED"
-            shipment.save()
+        if shipment.status !="Delivered":
+                shipment.status = "DELIVERED"
+                shipment.save()
         return redirect("driver_shipments")
     return HttpResponseForbidden("Invalid Request")
 

@@ -30,4 +30,5 @@ urlpatterns = [
     path("manager/shipments/<int:pk>/edit/", shipment_views.manager_modify_shipment, name="manager_modify"),
     path("driver/shipments", shipment_views.driver_shipments, name="driver_shipments"),
     path("driver/shipments/<str:tracking_id>/delivered", shipment_views.driver_mark_delivered, name="driver_mark_delivered"),
+    path("customer/shipments/", shipment_views.customer_shipments, name="customer_shipments")
 ]
